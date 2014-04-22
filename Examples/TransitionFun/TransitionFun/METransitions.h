@@ -26,11 +26,13 @@
 #import "MEFoldAnimationController.h"
 #import "MEZoomAnimationController.h"
 #import "MEDynamicTransition.h"
+#import "MEAboveAnimationController.h"
 
 FOUNDATION_EXPORT NSString *const METransitionNameDefault;
 FOUNDATION_EXPORT NSString *const METransitionNameFold;
 FOUNDATION_EXPORT NSString *const METransitionNameZoom;
 FOUNDATION_EXPORT NSString *const METransitionNameDynamic;
+FOUNDATION_EXPORT NSString *const METransitionNameAbove;
 
 @interface METransitions : NSObject {
     NSArray *_all;
@@ -38,5 +40,6 @@ FOUNDATION_EXPORT NSString *const METransitionNameDynamic;
 @property (nonatomic, strong) MEFoldAnimationController *foldAnimationController;
 @property (nonatomic, strong) MEZoomAnimationController *zoomAnimationController;
 @property (nonatomic, strong) MEDynamicTransition *dynamicTransition;
+@property (nonatomic, strong) MEAboveAnimationController *aboveTransition;
 @property (nonatomic, strong, readonly) NSArray *all;
 @end

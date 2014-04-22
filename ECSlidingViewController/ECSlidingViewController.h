@@ -193,6 +193,7 @@
  */
 @property (nonatomic, assign) CGFloat anchorRightRevealAmount;
 
+- (void)detectPanGestureRecognizer:(UIPanGestureRecognizer *)recognizer;
 
 ///---------------------------
 /// @name Moving the Top Layer

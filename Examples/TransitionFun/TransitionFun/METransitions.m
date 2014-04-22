@@ -22,11 +22,13 @@
 // THE SOFTWARE.
 
 #import "METransitions.h"
+#import "MEAboveAnimationController.h"
 
 NSString * const METransitionNameDefault = @"Default";
 NSString * const METransitionNameFold    = @"Fold";
 NSString * const METransitionNameZoom    = @"Zoom";
 NSString * const METransitionNameDynamic = @"UIKit Dynamics";
+NSString * const METransitionNameAbove = @"Menu above";
 
 @interface METransitions ()
 @end
@@ -41,7 +43,8 @@ NSString * const METransitionNameDynamic = @"UIKit Dynamics";
     _all = @[@{ @"name" : METransitionNameDefault, @"transition" : [NSNull null] },
              @{ @"name" : METransitionNameFold,    @"transition" : self.foldAnimationController },
              @{ @"name" : METransitionNameZoom,    @"transition" : self.zoomAnimationController },
-             @{ @"name" : METransitionNameDynamic, @"transition" : self.dynamicTransition }];
+             @{ @"name" : METransitionNameDynamic, @"transition" : self.dynamicTransition },
+			@{ @"name" : METransitionNameAbove, @"transition" : self.aboveTransition }];
     
     return _all;
 }
@@ -70,6 +73,15 @@ NSString * const METransitionNameDynamic = @"UIKit Dynamics";
     _dynamicTransition = [[MEDynamicTransition alloc] init];
     
     return _dynamicTransition;
+}
+
+- (MEAboveAnimationController *)aboveTransition
+{
+	if (_aboveTransition) return _aboveTransition;
+
+	_aboveTransition = [[MEAboveAnimationController alloc] init];
+
+	return _aboveTransition;
 }
 
 @end
