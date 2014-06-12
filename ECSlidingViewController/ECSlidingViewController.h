@@ -299,4 +299,9 @@
  */
 @property (nonatomic, strong) NSArray *customAnchoredGestures;
 
+/**
+ The default duration of the view transition.
+ */
+@property (nonatomic, assign) NSTimeInterval defaultTransitionDuration;
+
 @end
