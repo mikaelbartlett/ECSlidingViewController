@@ -537,7 +537,7 @@
                              topViewPosition:(ECSlidingViewControllerTopViewPosition)topViewPosition {
     CGRect frame = CGRectInfinite;
     
-    if ([(NSObject *)self.delegate respondsToSelector:@selector(slidingViewController:layoutControllerForTopViewPosition:)]) {
+    if ([self.delegate respondsToSelector:@selector(slidingViewController:layoutControllerForTopViewPosition:)]) {
         id<ECSlidingViewControllerLayout> layoutController = [self.delegate slidingViewController:self
                                                                layoutControllerForTopViewPosition:topViewPosition];
         
@@ -583,12 +583,12 @@
     
     self.currentOperation = operation;
     
-    if ([(NSObject *)self.delegate respondsToSelector:@selector(slidingViewController:animationControllerForOperation:topViewController:)]) {
+    if ([self.delegate respondsToSelector:@selector(slidingViewController:animationControllerForOperation:topViewController:)]) {
         self.currentAnimationController = [self.delegate slidingViewController:self
                                                animationControllerForOperation:operation
                                                              topViewController:self.topViewController];
         
-        if ([(NSObject *)self.delegate respondsToSelector:@selector(slidingViewController:interactionControllerForAnimationController:)]) {
+        if ([self.delegate respondsToSelector:@selector(slidingViewController:interactionControllerForAnimationController:)]) {
             self.currentInteractiveTransition = [self.delegate slidingViewController:self
                                          interactionControllerForAnimationController:self.currentAnimationController];
         } else {

@@ -49,7 +49,7 @@
 /**
  The `ECSlidingViewControllerDelegate` protocol is adopted by an object that may customize a sliding view controller's animation transition, interactive transition, or the layout of the child views.
  */
-@protocol ECSlidingViewControllerDelegate
+@protocol ECSlidingViewControllerDelegate <NSObject>
 
 @optional
 /**
@@ -272,7 +272,7 @@
 /**
  The delegate that provides objects to customizing the transition animation, transition interaction, or layout of the child view controllers. See the `ECSlidingViewControllerDelegate` protocol for more information.
  */
-@property (nonatomic, assign) id<ECSlidingViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<ECSlidingViewControllerDelegate> delegate;
 
 /**
  A mask of gestures/behaviors indicating how you want the top view to act while it is in the anchored position. Useful for customizing how you want your users to reset the top view. The default is `ECSlidingViewControllerAnchoredGestureNone`.
